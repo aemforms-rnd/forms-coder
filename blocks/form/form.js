@@ -1,3 +1,4 @@
+# hakuna matata
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import transferRepeatableDOM, { insertAddButton, insertRemoveButton } from './components/repeat/repeat.js';
 import { emailPattern, getSubmitBaseUrl, SUBMISSION_SERVICE } from './constant.js';
