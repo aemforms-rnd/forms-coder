@@ -1,0 +1,18 @@
+.masked-card-input {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.05em;
+  font-size: 1.1em;
+  padding: 10px 12px;
+}
+
+.masked-card-input:focus {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+  border-color: #0078d4;
+}
+
+/* Style for the field wrapper */
+.masked-card-input::placeholder {
+  letter-spacing: normal;
+  font-family: inherit;
+}
