@@ -42,32 +42,5 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
-/**
- * Calculate the sum of all transaction amounts from the repeatable transactions panel
- * @name sumTransactionAmounts
- * Sum Transaction Amounts
- * @param {scope} globals Global scope object
- * @return {number} Total sum of all transaction amounts
- */
-function sumTransactionAmounts(globals) {
-  const transactions = globals.form.transactions;
-
-  // Check if transactions panel exists and is an array
-  if (!transactions || !Array.isArray(transactions.$value)) {
-    return 0;
-  }
-
-  // Sum all transaction amounts
-  let total = 0;
-  transactions.$value.forEach((transaction) => {
-    const amount = transaction.transaction_amount1734001234590?.$value;
-    if (amount && typeof amount === 'number') {
-      total += amount;
-    }
-  });
-
-  return Math.round(total * 100) / 100; // Round to 2 decimal places
-}
-
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString, sumTransactionAmounts };
+export { getFullName, days, submitFormArrayToString };
