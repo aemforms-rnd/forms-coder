@@ -45,7 +45,7 @@ function days(endDate, startDate) {
 /**
  * Calculate sum of all transaction amounts
  * @name sumTransactionAmounts Sum Transaction Amounts
- * @param {scope} globals Global object
+ * @param {scope} globals
  * @return {number} Total sum of all transaction amounts
  */
 function sumTransactionAmounts(globals) {
