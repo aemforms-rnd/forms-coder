@@ -42,6 +42,15 @@
       "components": [
         {
           "...": "../blocks/form/components/range/_range.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/components/test/_test.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/components/test-one/_test-one.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/components/credit-card-input/_credit-card-input.json#/definitions"
         }
       ]
     }

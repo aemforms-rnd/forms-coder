@@ -1,0 +1,56 @@
+{
+  "definitions": [
+    {
+      "title": "Countdown Timer",
+      "id": "countdown-timer",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Countdown Timer",
+              "fieldType": "text-input",
+              "fd:viewType": "countdown-timer"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "countdown-timer",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "text",
+          "name": "targetTime",
+          "label": "Target Time (ISO 8601)",
+          "description": "Target time for countdown (e.g., 2025-12-31T23:59:59Z)"
+        },
+        {
+          "component": "number",
+          "name": "duration",
+          "label": "Duration (seconds)",
+          "description": "Duration in seconds if no target time is set (default: 300)",
+          "valueType": "number"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

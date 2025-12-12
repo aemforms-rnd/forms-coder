@@ -1,0 +1,145 @@
+/** countdown-timer.css **/
+
+/* Main container */
+main .form .countdown-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+/* Timer display container */
+main .form .countdown-timer .timer-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Individual time unit */
+main .form .countdown-timer .timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 20px;
+    border-radius: 8px;
+    min-width: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer value (numbers) */
+main .form .countdown-timer .timer-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #667eea;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* Timer label (Hours, Minutes, Seconds) */
+main .form .countdown-timer .timer-label {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Separator (colon) */
+main .form .countdown-timer .timer-separator {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin: 0 5px;
+    align-self: center;
+    padding-top: 10px;
+}
+
+/* Status message */
+main .form .countdown-timer .timer-status {
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    min-height: 24px;
+}
+
+/* Warning state (less than 1 minute) */
+main .form .countdown-timer.warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+main .form .countdown-timer.warning .timer-value {
+    color: #f5576c;
+}
+
+/* Expired state */
+main .form .countdown-timer.expired {
+    background: linear-gradient(135deg, #868f96 0%, #596164 100%);
+}
+
+main .form .countdown-timer.expired .timer-value {
+    color: #596164;
+}
+
+main .form .countdown-timer.expired .timer-status {
+    font-size: 1.25rem;
+    animation: blink 1s step-start infinite;
+}
+
+/* Disabled state */
+main .form .countdown-timer.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+}
+
+main .form .countdown-timer.disabled .timer-value {
+    color: #7f8c8d;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    main .form .countdown-timer .timer-unit {
+        padding: 10px 15px;
+        min-width: 60px;
+    }
+
+    main .form .countdown-timer .timer-value {
+        font-size: 2rem;
+    }
+
+    main .form .countdown-timer .timer-label {
+        font-size: 0.65rem;
+    }
+
+    main .form .countdown-timer .timer-separator {
+        font-size: 1.5rem;
+    }
+}
