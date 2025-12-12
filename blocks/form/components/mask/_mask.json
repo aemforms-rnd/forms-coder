@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Mask",
+      "id": "mask",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Mask",
+              "fieldType": "text-input",
+              "fd:viewType": "mask"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "mask",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "component": "text",
+          "label": "Mask",
+          "name": "mask",
+          "type": "text",
+          "placeholder": "Enter your mask",
+          "required": false,
+          "helpText": "Enter your mask",
+          "defaultValue": "",
+          "visible": true,
+          "enabled": true
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

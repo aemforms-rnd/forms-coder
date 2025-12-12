@@ -684,6 +684,22 @@
               }
             }
           }
+        },
+        {
+          "title": "Mask",
+          "id": "mask",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Mask",
+                  "fieldType": "text-input",
+                  "fd:viewType": "mask"
+                }
+              }
+            }
+          }
         }
       ]
     }
