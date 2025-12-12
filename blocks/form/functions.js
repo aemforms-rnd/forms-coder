@@ -42,5 +42,29 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+/**
+ * Calculate sum of all transaction amounts
+ * @name sumTransactionAmounts
+ * Sum Transaction Amounts
+ * @param {scope} globals Global scope object
+ * @return {number} Total sum of all transaction amounts
+ */
+function sumTransactionAmounts(globals) {
+  const formData = globals.functions.exportData();
+
+  // Check if transactions exist and is an array
+  if (!formData.transactions || !Array.isArray(formData.transactions)) {
+    return 0;
+  }
+
+  // Sum all transaction amounts
+  const total = formData.transactions.reduce((sum, transaction) => {
+    const amount = parseFloat(transaction.transaction_amount) || 0;
+    return sum + amount;
+  }, 0);
+
+  return total;
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString };
+export { getFullName, days, submitFormArrayToString, sumTransactionAmounts };
