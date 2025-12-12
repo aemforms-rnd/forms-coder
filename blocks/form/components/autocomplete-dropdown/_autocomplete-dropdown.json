@@ -1,0 +1,96 @@
+{
+  "definitions": [
+    {
+      "title": "Autocomplete Dropdown",
+      "id": "autocomplete-dropdown",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/dropdown/v1/dropdown",
+            "template": {
+              "jcr:title": "Autocomplete Dropdown",
+              "fieldType": "drop-down",
+              "fd:viewType": "autocomplete-dropdown"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "autocomplete-dropdown",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Autocomplete Settings",
+          "name": "autocomplete"
+        },
+        {
+          "component": "number",
+          "label": "Minimum Characters",
+          "name": "minCharacters",
+          "description": "Minimum characters required before showing suggestions",
+          "valueType": "number",
+          "value": 1,
+          "min": 0
+        },
+        {
+          "component": "number",
+          "label": "Max Suggestions",
+          "name": "maxSuggestions",
+          "description": "Maximum number of suggestions to display",
+          "valueType": "number",
+          "value": 10,
+          "min": 1
+        },
+        {
+          "component": "boolean",
+          "label": "Case Sensitive",
+          "name": "caseSensitive",
+          "description": "Enable case-sensitive matching",
+          "valueType": "boolean",
+          "value": false
+        },
+        {
+          "component": "select",
+          "label": "Filter Mode",
+          "name": "filterMode",
+          "description": "How to match user input against options",
+          "valueType": "string",
+          "value": "starts-with",
+          "options": [
+            {
+              "name": "Starts With",
+              "value": "starts-with"
+            },
+            {
+              "name": "Contains",
+              "value": "contains"
+            },
+            {
+              "name": "Exact Match",
+              "value": "exact"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

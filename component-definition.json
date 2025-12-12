@@ -684,6 +684,38 @@
               }
             }
           }
+        },
+        {
+          "title": "Number Slider",
+          "id": "number-slider",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+                "template": {
+                  "jcr:title": "Number Slider",
+                  "fieldType": "number-input",
+                  "fd:viewType": "number-slider"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Autocomplete Dropdown",
+          "id": "autocomplete-dropdown",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/dropdown/v1/dropdown",
+                "template": {
+                  "jcr:title": "Autocomplete Dropdown",
+                  "fieldType": "drop-down",
+                  "fd:viewType": "autocomplete-dropdown"
+                }
+              }
+            }
+          }
         }
       ]
     }

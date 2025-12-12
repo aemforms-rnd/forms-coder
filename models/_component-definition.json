@@ -42,6 +42,12 @@
       "components": [
         {
           "...": "../blocks/form/components/range/_range.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/components/number-slider/_number-slider.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/components/autocomplete-dropdown/_autocomplete-dropdown.json#/definitions"
         }
       ]
     }

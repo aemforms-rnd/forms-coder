@@ -1,0 +1,198 @@
+/* Custom component styles: autocomplete-dropdown */
+
+.autocomplete-dropdown {
+  position: relative;
+}
+
+/* Autocomplete input styling */
+.autocomplete-dropdown .autocomplete-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #101828;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.autocomplete-dropdown .autocomplete-input:focus {
+  outline: none;
+  border-color: #2e90fa;
+  box-shadow: 0 0 0 4px rgba(46, 144, 250, 0.1);
+}
+
+.autocomplete-dropdown .autocomplete-input::placeholder {
+  color: #667085;
+}
+
+.autocomplete-dropdown .autocomplete-input:disabled {
+  background-color: #f9fafb;
+  color: #98a2b3;
+  cursor: not-allowed;
+}
+
+/* Suggestions container */
+.autocomplete-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+}
+
+/* Scrollbar styling for suggestions */
+.autocomplete-suggestions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar-track {
+  background: #f9fafb;
+  border-radius: 0 8px 8px 0;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar-thumb {
+  background: #d0d5dd;
+  border-radius: 4px;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar-thumb:hover {
+  background: #98a2b3;
+}
+
+/* Individual suggestion item */
+.autocomplete-suggestion-item {
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #344054;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+.autocomplete-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-suggestion-item:hover {
+  background-color: #f9fafb;
+}
+
+.autocomplete-suggestion-item.active {
+  background-color: #eff8ff;
+  color: #175cd3;
+}
+
+.autocomplete-suggestion-item:active {
+  background-color: #d1e9ff;
+}
+
+/* Empty state (optional - you can add this via JS if needed) */
+.autocomplete-suggestions-empty {
+  padding: 16px 12px;
+  text-align: center;
+  color: #667085;
+  font-size: 14px;
+}
+
+/* Animation for suggestions appearing */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.autocomplete-suggestions {
+  animation: slideDown 0.15s ease-out;
+}
+
+/* Focus visible for accessibility */
+.autocomplete-dropdown .autocomplete-input:focus-visible {
+  outline: 2px solid #2e90fa;
+  outline-offset: 2px;
+}
+
+/* Disabled state for the container */
+.autocomplete-dropdown[data-disabled="true"] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Error state */
+.autocomplete-dropdown.error .autocomplete-input {
+  border-color: #f04438;
+}
+
+.autocomplete-dropdown.error .autocomplete-input:focus {
+  border-color: #f04438;
+  box-shadow: 0 0 0 4px rgba(240, 68, 56, 0.1);
+}
+
+/* Success state */
+.autocomplete-dropdown.success .autocomplete-input {
+  border-color: #12b76a;
+}
+
+.autocomplete-dropdown.success .autocomplete-input:focus {
+  border-color: #12b76a;
+  box-shadow: 0 0 0 4px rgba(18, 183, 106, 0.1);
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .autocomplete-dropdown .autocomplete-input {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+
+  .autocomplete-dropdown .autocomplete-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+
+  .autocomplete-suggestions {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  .autocomplete-suggestion-item {
+    color: #e5e7eb;
+    border-bottom-color: #374151;
+  }
+
+  .autocomplete-suggestion-item:hover {
+    background-color: #374151;
+  }
+
+  .autocomplete-suggestion-item.active {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .autocomplete-suggestions {
+    max-height: 200px;
+  }
+
+  .autocomplete-dropdown .autocomplete-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
