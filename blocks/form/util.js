@@ -70,7 +70,7 @@ export function createLabel(fd, tagName = 'label') {
     if (fd.label.richText === true) {
       label.innerHTML = stripTags(fd.label.value);
     } else {
-      label.textContent = fd.label.value;
+      label.textContent = stripTags(fd.label.value, '');
     }
     if (fd.label.visible === false) {
       label.dataset.visible = 'false';
