@@ -22,6 +22,7 @@ import {
   createRadioOrCheckbox,
   createInput,
 } from './util.js';
+import decorateForm from './decorate-form.js';
 
 export const DELAY_MS = 0;
 let captchaField;
@@ -548,6 +549,7 @@ export default async function decorate(block) {
     if (source === 'aem' && formDef.properties && formDef.properties['fd:path']) {
       form.dataset.formpath = formDef.properties['fd:path'];
     }
+    decorateForm(form, formDef);
     container.replaceWith(form);
   }
 }

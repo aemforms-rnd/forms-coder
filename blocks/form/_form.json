@@ -48,6 +48,19 @@
           "description": "Visit https://www.adobe.com/go/learn_aemforms_cs_properties_ext for more details.",
           "collapsible": false,
           "fields": []
+        },
+        {
+          "component": "text",
+          "name": "customFunctionsPath",
+          "label": "Custom Functions Path",
+          "valueType": "string",
+          "value": "/blocks/form/functions.js"
+        },
+        {
+          "component": "text",
+          "name": "customStylesPath",
+          "label": "Form Specific styles path",
+          "valueType": "string"
         }
       ]
     },
