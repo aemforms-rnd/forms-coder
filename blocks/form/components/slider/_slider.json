@@ -1,0 +1,43 @@
+{
+  "definitions": [
+    {
+      "title": "Slider",
+      "id": "slider",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+            "template": {
+              "jcr:title": "Slider",
+              "fieldType": "number-input",
+              "fd:viewType": "slider"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "slider",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}
