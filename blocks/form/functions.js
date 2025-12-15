@@ -69,5 +69,48 @@ function sumTransactionAmounts(globals) {
   return total;
 }
 
+/**
+ * Mask mobile number with +91 prefix, showing only last 4 digits
+ * @name maskMobileNumber
+ * Mask Mobile Number
+ * @param {string} mobileNumber The mobile number to mask
+ * @param {scope} globals Global scope object
+ * @return {string} Masked mobile number in format +91 ******XXXX
+ */
+function maskMobileNumber(mobileNumber, globals) {
+  if (!mobileNumber) return '';
+
+  // Remove any non-digit characters
+  const digitsOnly = mobileNumber.replace(new RegExp('\\D', 'g'), '');
+
+  // If less than 4 digits, return as is with prefix
+  if (digitsOnly.length < 4) {
+    return '+91 ' + digitsOnly;
+  }
+
+  // Get last 4 digits
+  const lastFour = digitsOnly.slice(-4);
+
+  // Create masked format: +91 ******XXXX
+  return '+91 ******' + lastFour;
+}
+
+/**
+ * Format mobile number with +91 prefix for editing
+ * @name formatMobileWithPrefix
+ * Format Mobile With Prefix
+ * @param {string} mobileNumber The mobile number to format
+ * @param {scope} globals Global scope object
+ * @return {string} Mobile number with +91 prefix
+ */
+function formatMobileWithPrefix(mobileNumber, globals) {
+  if (!mobileNumber) return '+91 ';
+
+  // Remove any non-digit characters
+  const digitsOnly = mobileNumber.replace(new RegExp('\\D', 'g'), '');
+
+  return '+91 ' + digitsOnly;
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString, sumTransactionAmounts };
+export { getFullName, days, submitFormArrayToString, sumTransactionAmounts, maskMobileNumber, formatMobileWithPrefix };
