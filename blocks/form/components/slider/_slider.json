@@ -1,0 +1,85 @@
+{
+  "definitions": [
+    {
+      "title": "Slider",
+      "id": "slider",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+            "template": {
+              "jcr:title": "Slider",
+              "fieldType": "number-input",
+              "fd:viewType": "slider"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "slider",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "number",
+          "label": "Minimum Value",
+          "name": "minimum",
+          "description": "Minimum value for the slider",
+          "valueType": "number"
+        },
+        {
+          "component": "number",
+          "label": "Maximum Value",
+          "name": "maximum",
+          "description": "Maximum value for the slider",
+          "valueType": "number"
+        },
+        {
+          "component": "number",
+          "label": "Step",
+          "name": "step",
+          "description": "Step increment for the slider",
+          "valueType": "number"
+        },
+        {
+          "component": "boolean",
+          "label": "Show Value",
+          "name": "showValue",
+          "description": "Display the current value next to the slider",
+          "valueType": "boolean"
+        },
+        {
+          "component": "text",
+          "label": "Value Prefix",
+          "name": "valuePrefix",
+          "description": "Text to show before the value (e.g., $)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "label": "Value Suffix",
+          "name": "valueSuffix",
+          "description": "Text to show after the value (e.g., %)",
+          "valueType": "string"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

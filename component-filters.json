@@ -63,12 +63,13 @@
       "password",
       "plain-text",
       "radio-group",
+      "range",
       "rating",
+      "slider",
       "telephone-input",
       "text-input",
       "tnc",
-      "wizard",
-      "range"
+      "wizard"
     ]
   }
 ]
