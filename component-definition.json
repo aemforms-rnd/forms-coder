@@ -684,6 +684,199 @@
               }
             }
           }
+        },
+        {
+          "title": "Password",
+          "id": "password",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Password",
+                  "fieldType": "text-input",
+                  "fd:viewType": "password"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Rating",
+          "id": "rating",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+                "template": {
+                  "jcr:title": "Rating",
+                  "fieldType": "number-input",
+                  "fd:viewType": "rating"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Masked Card Input",
+          "id": "masked-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Masked Card Number",
+                  "fieldType": "text-input",
+                  "fd:viewType": "masked-card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Accordion",
+          "id": "form-accordion",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Accordion",
+                  "fieldType": "panel",
+                  "fd:viewType": "accordion",
+                  "minOccur": 1,
+                  "panel1": {
+                    "jcr:title": "Item 1",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  },
+                  "panel2": {
+                    "jcr:title": "Item 2",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Wizard",
+          "id": "wizard",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Wizard",
+                  "fieldType": "panel",
+                  "fd:viewType": "wizard",
+                  "minOccur": 1,
+                  "panel1": {
+                    "jcr:title": "Item 1",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  },
+                  "panel2": {
+                    "jcr:title": "Item 2",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Social Security Number",
+          "id": "ssn",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Social Security Number",
+                  "fieldType": "text-input",
+                  "fd:viewType": "ssn",
+                  "placeholder": "XXX-XX-XXXX",
+                  "autocomplete": "off"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Modal",
+          "id": "form-modal",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Modal",
+                  "fieldType": "panel",
+                  "fd:viewType": "modal",
+                  "visible": false
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Terms and conditions",
+          "id": "tnc",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/termsandconditions/v1/termsandconditions",
+                "template": {
+                  "jcr:title": "Terms and conditions",
+                  "fieldType": "panel",
+                  "fd:viewType": "tnc",
+                  "text": {
+                    "value": "Text related to the terms and conditions come here.",
+                    "sling:resourceType": "core/fd/components/form/text/v1/text",
+                    "fieldType": "plain-text",
+                    "textIsRich": true
+                  },
+                  "link": {
+                    "enum": [
+                      "dummy-link-1"
+                    ],
+                    "type": "string[]",
+                    "fd:viewType": "toggleable-link",
+                    "title": "I agree to the terms & conditions",
+                    "enumNames": [
+                      "Privacy policy."
+                    ],
+                    "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                    "fieldType": "checkbox-group",
+                    "fd:rules": {
+                      "jcr:primaryType": "nt:unstructured",
+                      "validationStatus": "valid"
+                    },
+                    "fd:events": {
+                      "jcr:primaryType": "nt:unstructured",
+                      "change": [
+                        "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
+                      ]
+                    }
+                  },
+                  "approvalcheckbox": {
+                    "name": "approvalcheckbox",
+                    "jcr:title": "I agree to the terms & conditions.",
+                    "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                    "fieldType": "checkbox",
+                    "required": true,
+                    "type": "string",
+                    "enum": [
+                      "true"
+                    ]
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     }

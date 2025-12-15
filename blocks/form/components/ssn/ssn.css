@@ -1,0 +1,118 @@
+/* Custom component styles: ssn */
+
+.ssn-field {
+  position: relative;
+}
+
+.ssn-input {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ssn-input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Masked state styling */
+.ssn-input.ssn-masked {
+  color: #666;
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+/* Visible state styling */
+.ssn-input.ssn-visible {
+  color: #333;
+  background-color: #fff;
+}
+
+/* Security indicator icon */
+.ssn-field::after {
+  content: '🔒';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* When focused, show unlock icon */
+.ssn-field:has(.ssn-input:focus)::after {
+  content: '🔓';
+  opacity: 0.8;
+}
+
+/* Invalid state */
+.ssn-input:invalid {
+  border-color: #dc3545;
+}
+
+.ssn-input:invalid:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Valid state */
+.ssn-input:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+/* Placeholder styling */
+.ssn-input::placeholder {
+  color: #aaa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: normal;
+}
+
+/* Disabled state */
+.ssn-input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ssn-input {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ssn-input {
+    border-width: 2px;
+  }
+
+  .ssn-input:focus {
+    border-width: 3px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .ssn-input {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    border-color: #555;
+  }
+
+  .ssn-input.ssn-masked {
+    background-color: #333;
+    color: #999;
+  }
+
+  .ssn-input:focus {
+    border-color: #4d94ff;
+    box-shadow: 0 0 0 3px rgba(77, 148, 255, 0.2);
+  }
+}

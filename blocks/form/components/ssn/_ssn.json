@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Social Security Number",
+      "id": "ssn",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Social Security Number",
+              "fieldType": "text-input",
+              "fd:viewType": "ssn",
+              "placeholder": "XXX-XX-XXXX",
+              "autocomplete": "off"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ssn",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}
