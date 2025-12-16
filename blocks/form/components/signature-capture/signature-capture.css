@@ -1,0 +1,73 @@
+/* Signature Capture Component Styles */
+
+.signature-container {
+  position: relative;
+  margin-top: 8px;
+}
+
+.signature-canvas {
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: crosshair;
+  touch-action: none;
+  width: 100%;
+  max-width: 400px;
+  height: 150px;
+  display: block;
+}
+
+.signature-canvas.disabled {
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  opacity: 0.6;
+}
+
+.signature-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.signature-clear-btn {
+  margin-top: 8px;
+  padding: 6px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.signature-clear-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.signature-clear-btn:active {
+  background-color: #d0d0d0;
+}
+
+.field-disabled .signature-clear-btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.field-disabled .signature-placeholder {
+  color: #bbb;
+}
+
+/* Hide the original input */
+.signature-data-input {
+  display: none !important;
+}
+
+/* Wrapper styles when disabled */
+.field-wrapper.field-disabled .signature-container {
+  opacity: 0.7;
+}
