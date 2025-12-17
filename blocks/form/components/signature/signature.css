@@ -1,0 +1,100 @@
+/**
+ * Signature Component Styles
+ */
+
+.signature-component {
+  margin-bottom: 20px;
+}
+
+.signature-canvas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.signature-canvas {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: crosshair;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  touch-action: none; /* Prevent scrolling while drawing on touch devices */
+  max-width: 100%;
+  height: auto;
+}
+
+.signature-canvas:hover {
+  border-color: #007bff;
+}
+
+.signature-canvas:active {
+  border-color: #0056b3;
+}
+
+.signature-clear-button {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signature-clear-button:hover {
+  background-color: #c82333;
+}
+
+.signature-clear-button:active {
+  background-color: #bd2130;
+  transform: translateY(1px);
+}
+
+.signature-clear-button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .signature-canvas {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .signature-clear-button {
+    width: 100%;
+  }
+}
+
+/* Required field indicator */
+.signature-component[data-required="true"] .field-label::after {
+  content: " *";
+  color: #dc3545;
+}
+
+/* Error state */
+.signature-component.field-error .signature-canvas {
+  border-color: #dc3545;
+}
+
+.signature-component.field-error .signature-canvas:hover {
+  border-color: #c82333;
+}
+
+/* Disabled state */
+.signature-component[data-disabled="true"] .signature-canvas {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+
+.signature-component[data-disabled="true"] .signature-clear-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

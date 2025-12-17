@@ -1,0 +1,81 @@
+{
+  "definitions": [
+    {
+      "title": "Signature",
+      "id": "signature",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Signature",
+              "fieldType": "text-input",
+              "fd:viewType": "signature"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "signature",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Signature Settings",
+          "name": "signature-settings"
+        },
+        {
+          "component": "number",
+          "name": "canvasWidth",
+          "label": "Canvas Width",
+          "valueType": "number",
+          "value": 600
+        },
+        {
+          "component": "number",
+          "name": "canvasHeight",
+          "label": "Canvas Height",
+          "valueType": "number",
+          "value": 200
+        },
+        {
+          "component": "text",
+          "name": "penColor",
+          "label": "Pen Color",
+          "value": "#000000"
+        },
+        {
+          "component": "number",
+          "name": "penWidth",
+          "label": "Pen Width",
+          "valueType": "number",
+          "value": 2
+        },
+        {
+          "component": "text",
+          "name": "clearButtonText",
+          "label": "Clear Button Text",
+          "value": "Clear"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}
