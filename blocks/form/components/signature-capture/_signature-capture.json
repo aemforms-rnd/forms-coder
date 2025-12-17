@@ -1,0 +1,43 @@
+{
+  "definitions": [
+    {
+      "title": "Signature Capture",
+      "id": "signature-capture",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Signature Capture",
+              "fieldType": "text-input",
+              "fd:viewType": "signature-capture"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "signature-capture",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Help Content",
+          "name": "help"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

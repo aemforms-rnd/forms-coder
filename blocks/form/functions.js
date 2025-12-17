@@ -69,5 +69,48 @@ function sumTransactionAmounts(globals) {
   return total;
 }
 
+/**
+ * Calculate annual premium based on sum assured and age
+ * Formula: 2% of sum assured + 0.1% for each year above 25
+ * @name calculateAnnualPremium
+ * Calculate Annual Premium
+ * @param {number} sumAssured Sum assured amount
+ * @param {string} dateOfBirth Date of birth in date format
+ * @param {scope} globals Global scope object
+ * @return {number} Calculated annual premium
+ */
+function calculateAnnualPremium(sumAssured, dateOfBirth, globals) {
+  // Return 0 if sum assured is not provided
+  if (!sumAssured || sumAssured === 0) {
+    return 0;
+  }
+
+  // Calculate age from date of birth
+  let age = 0;
+  if (dateOfBirth) {
+    const dob = typeof dateOfBirth === 'string' ? new Date(dateOfBirth) : dateOfBirth;
+    if (!Number.isNaN(dob.getTime())) {
+      const today = new Date();
+      age = today.getFullYear() - dob.getFullYear();
+      const monthDiff = today.getMonth() - dob.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age -= 1;
+      }
+    }
+  }
+
+  // Base premium: 2% of sum assured
+  let premium = sumAssured * 0.02;
+
+  // Additional charge: 0.1% for each year above 25
+  if (age > 25) {
+    const yearsAbove25 = age - 25;
+    premium += sumAssured * (yearsAbove25 * 0.001); // 0.1% = 0.001
+  }
+
+  // Round to 2 decimal places
+  return Math.round(premium * 100) / 100;
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString, sumTransactionAmounts };
+export { getFullName, days, submitFormArrayToString, sumTransactionAmounts, calculateAnnualPremium };

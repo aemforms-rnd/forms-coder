@@ -1,0 +1,99 @@
+/* Custom component styles: signature-capture */
+
+.signature-capture {
+  margin-bottom: 20px;
+}
+
+.signature-canvas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.signature-instruction {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.signature-canvas {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: crosshair;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  touch-action: none; /* Prevent scrolling while drawing on mobile */
+}
+
+.signature-canvas:hover {
+  border-color: #999;
+}
+
+.signature-canvas:active {
+  border-color: #0066cc;
+}
+
+.signature-clear-button {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signature-clear-button:hover {
+  background-color: #d32f2f;
+}
+
+.signature-clear-button:active {
+  background-color: #b71c1c;
+  transform: translateY(1px);
+}
+
+.signature-clear-button:focus {
+  outline: 2px solid #ff9800;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .signature-canvas {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .signature-clear-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Error state styling */
+.signature-capture[data-invalid="true"] .signature-canvas {
+  border-color: #f44336;
+}
+
+.signature-capture[data-invalid="true"] .signature-canvas {
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+}
+
+/* Disabled state */
+.signature-capture[disabled] .signature-canvas {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.signature-capture[disabled] .signature-clear-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
