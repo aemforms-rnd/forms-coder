@@ -684,6 +684,22 @@
               }
             }
           }
+        },
+        {
+          "title": "Test comp",
+          "id": "test-comp",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Test comp",
+                  "fieldType": "text-input",
+                  "fd:viewType": "test-comp"
+                }
+              }
+            }
+          }
         }
       ]
     }
